@@ -1,3 +1,11 @@
-def is_palindrome_recursive(word, low_index, high_index):
-    """Faça o código aqui."""
-    raise NotImplementedError
+def is_palindrome_recursive(word, min_index, max_index):
+    if word == '':
+        return False
+
+    if min_index >= max_index:
+        return True
+
+    if word[min_index] != word[max_index]:
+        return False
+
+    return is_palindrome_recursive(word, min_index + 1, max_index - 1)
